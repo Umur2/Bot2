@@ -61,4 +61,37 @@ async def dog(ctx):
     image_url = get_dog_image_url()
     await ctx.send(image_url)
 
-bot.run('Discord Token')
+
+@bot.command()
+async def geri(ctx, left:str):
+    if left == 'plastik':
+        await ctx.send('Bu çöpü sarı renkli kutuya atın.')
+    elif left == 'metal':   
+        await ctx.send('Bu çöpü gıri renkli kutuya atın.')
+    elif left == 'cam':
+        await ctx.send('Bu çöpü yeşil renkli kutuya atın.')
+    elif left == 'kağıt':
+        await ctx.send('Bu çöpü mavi renkli kutuya atın.')    
+    elif left == 'pil':
+        await ctx.send('Bu çöpü kırmızı renkli kutuya atın.')
+    else:
+        await ctx.send('Bu materyeli geri dönüştüremezsin.')
+
+@bot.command()
+async def geri_fikir(ctx):
+    fikirler = ('Kartondan bir kalem kutusu','Kumaştan bir elbise','İlaç kutularından bir robot')
+    fikir = random.choice(fikirler)
+    await ctx.send(f'{fikir}, yapabilirsin.')
+
+@bot.command()
+async def geri_sure(ctx, left = str):
+    if left == 'plastik şişe':
+        await ctx.send('Bu atık doğada 450 yıl boyunca kalır.')
+
+
+
+
+
+
+
+bot.run('Token')
